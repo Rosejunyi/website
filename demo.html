@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI洞察演示 - 「慧视」AI金融洞察引擎</title>
+    <meta name="description" content="体验「慧视」AI的K线模式识别和金融报告分析能力，实时展示AI的深度学习洞察。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="url(#gradient1)" stroke-width="2"/>
+                        <path d="M12 20L18 26L28 14" stroke="url(#gradient1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4F46E5"/>
+                                <stop offset="100%" style="stop-color:#06B6D4"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <span class="logo-text">「慧视」AI金融洞察引擎</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="demo.html" class="nav-link active">AI洞察演示</a>
+                <a href="about.html" class="nav-link">关于我们</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Header -->
+    <section class="demo-header">
+        <div class="container">
+            <div class="demo-header-content">
+                <h1 class="demo-title">AI洞察演示</h1>
+                <p class="demo-subtitle">实时体验AI的深度学习分析能力</p>
+                
+                <!-- Stock Selector -->
+                <div class="stock-selector">
+                    <label for="stockSelect">选择股票：</label>
+                    <select id="stockSelect" class="stock-select">
+                        <option value="AAPL">苹果公司 (AAPL)</option>
+                        <option value="TSLA">特斯拉 (TSLA)</option>
+                        <option value="MSFT">微软 (MSFT)</option>
+                        <option value="GOOGL">谷歌 (GOOGL)</option>
+                        <option value="AMZN">亚马逊 (AMZN)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Demo Content -->
+    <section class="demo-content">
+        <div class="container">
+            <div class="demo-layout">
+                <!-- Left Side: Charts -->
+                <div class="charts-section">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h3 class="chart-title">苹果公司 (AAPL) 日线图及AI洞察</h3>
+                            <div class="chart-controls">
+                                <button class="chart-btn active" data-timeframe="daily">日线</button>
+                                <button class="chart-btn" data-timeframe="weekly">周线</button>
+                                <button class="chart-btn" data-timeframe="monthly">月线</button>
+                            </div>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="stockChart"></canvas>
+                            <div class="ai-annotations">
+                                <div class="annotation support-line" style="bottom: 30%; left: 20%;">
+                                    <div class="annotation-dot"></div>
+                                    <div class="annotation-label">AI识别支撑位</div>
+                                </div>
+                                <div class="annotation resistance-line" style="top: 20%; right: 25%;">
+                                    <div class="annotation-dot"></div>
+                                    <div class="annotation-label">AI识别阻力位</div>
+                                </div>
+                                <div class="annotation pattern-highlight" style="top: 40%; left: 60%;">
+                                    <div class="annotation-dot pattern"></div>
+                                    <div class="annotation-label">锤头线形态</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: AI Analysis -->
+                <div class="ai-analysis-section">
+                    <div class="ai-console">
+                        <div class="console-header">
+                            <div class="console-title">
+                                <span class="ai-icon">🤖</span>
+                                「慧视」AI分析
+                            </div>
+                            <div class="analysis-status">
+                                <span class="status-indicator active"></span>
+                                实时分析中
+                            </div>
+                        </div>
+
+                        <!-- K线模式洞察 -->
+                        <div class="analysis-module">
+                            <h4 class="module-title">K线模式洞察</h4>
+                            
+                            <div class="insight-item">
+                                <div class="insight-label">AI识别模式</div>
+                                <div class="insight-value">
+                                    <span class="pattern-tag">锤头线</span>
+                                    <span class="pattern-tag">上升三角形</span>
+                                </div>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight-label">当前趋势洞察</div>
+                                <div class="insight-value">
+                                    <div class="trend-indicator bullish">
+                                        <span class="trend-arrow">↗</span>
+                                        短期看涨，成交量配合良好
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight-label">关键价格区</div>
+                                <div class="price-levels">
+                                    <div class="price-level support">
+                                        <span class="level-label">支撑位</span>
+                                        <span class="level-value">$175.20</span>
+                                    </div>
+                                    <div class="price-level resistance">
+                                        <span class="level-label">阻力位</span>
+                                        <span class="level-value">$185.50</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 历史模式概率推演 -->
+                            <div class="probability-section">
+                                <div class="insight-label">历史模式概率推演</div>
+                                <div class="probability-bars">
+                                    <div class="probability-item">
+                                        <div class="prob-label">上涨概率</div>
+                                        <div class="prob-bar">
+                                            <div class="prob-fill bullish" style="width: 68%">
+                                                <div class="prob-particles"></div>
+                                            </div>
+                                        </div>
+                                        <div class="prob-value">68%</div>
+                                    </div>
+                                    <div class="probability-item">
+                                        <div class="prob-label">下跌概率</div>
+                                        <div class="prob-bar">
+                                            <div class="prob-fill bearish" style="width: 22%">
+                                                <div class="prob-particles"></div>
+                                            </div>
+                                        </div>
+                                        <div class="prob-value">22%</div>
+                                    </div>
+                                    <div class="probability-item">
+                                        <div class="prob-label">盘整概率</div>
+                                        <div class="prob-bar">
+                                            <div class="prob-fill neutral" style="width: 10%">
+                                                <div class="prob-particles"></div>
+                                            </div>
+                                        </div>
+                                        <div class="prob-value">10%</div>
+                                    </div>
+                                </div>
+                                <div class="probability-disclaimer">
+                                    此为历史统计概率，非未来预测。过去表现不代表未来。
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 金融叙事引擎 -->
+                        <div class="analysis-module">
+                            <h4 class="module-title">金融叙事引擎</h4>
+                            
+                            <div class="insight-item">
+                                <div class="insight-label">报告核心摘要</div>
+                                <div class="report-summary">
+                                    <p class="summary-text" data-tooltip="AI从财报中提取的关键信息">
+                                        Q3财报显示营收增长12%，iPhone销量超预期，服务业务持续强劲增长。
+                                        管理层对未来展望乐观，预计Q4将继续保持增长势头。
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight-label">AI情绪判断</div>
+                                <div class="sentiment-analysis">
+                                    <div class="sentiment-meter">
+                                        <div class="sentiment-fill" style="width: 75%"></div>
+                                        <div class="sentiment-indicator" style="left: 75%"></div>
+                                    </div>
+                                    <div class="sentiment-label">整体情绪：平稳偏乐观</div>
+                                </div>
+                            </div>
+
+                            <div class="insight-item">
+                                <div class="insight-label">关键叙事与主题</div>
+                                <div class="narrative-cloud">
+                                    <span class="narrative-tag high">创新技术</span>
+                                    <span class="narrative-tag medium">市场扩张</span>
+                                    <span class="narrative-tag high">盈利增长</span>
+                                    <span class="narrative-tag low">供应链</span>
+                                    <span class="narrative-tag medium">用户增长</span>
+                                    <span class="narrative-tag high">生态系统</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI思考过程 -->
+                        <div class="thinking-process">
+                            <div class="thinking-header">
+                                <span class="thinking-icon">⚡</span>
+                                AI思考过程
+                            </div>
+                            <div class="thinking-steps">
+                                <div class="thinking-step completed">
+                                    <div class="step-indicator"></div>
+                                    <span>数据预处理完成</span>
+                                </div>
+                                <div class="thinking-step completed">
+                                    <div class="step-indicator"></div>
+                                    <span>模式识别分析</span>
+                                </div>
+                                <div class="thinking-step active">
+                                    <div class="step-indicator"></div>
+                                    <span>概率计算中...</span>
+                                </div>
+                                <div class="thinking-step">
+                                    <div class="step-indicator"></div>
+                                    <span>生成洞察报告</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Disclaimer -->
+    <div class="demo-disclaimer">
+        <div class="container">
+            <p>
+                <strong>重要提示：</strong>
+                本页面展示的所有AI分析结果仅为技术演示，不构成任何投资建议。
+                投资有风险，决策需谨慎。请在做出投资决定前咨询专业的财务顾问。
+            </p>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+</html>
